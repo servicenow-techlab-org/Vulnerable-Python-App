@@ -5,7 +5,7 @@ WORKDIR /app
 ADD app.py /app
 RUN pip3 install Flask
 
-LABEL org.opencontainers.image.source="https://https://github.com/vikas-aggarwal/Vulnerable-Python-App" \
+LABEL org.opencontainers.image.source="https://github.com/servicenow-techlab-org/Vulnerable-Python-App" \
       org.opencontainers.image.revision=$VCS_REF
 
 CMD ["python3", "app.py"]
