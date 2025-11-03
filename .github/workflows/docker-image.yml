@@ -24,6 +24,5 @@ jobs:
         
     - name: Build the Docker image
       run: |
-        echo "VCS_REF=`git rev-parse --short HEAD`" >> $GITHUB_ENV
-        docker build . --file Dockerfile --tag ghcr.io/vikas-aggarwal/vulnerable-app:1.0
+        docker build . --file Dockerfile --tag ghcr.io/vikas-aggarwal/vulnerable-app:1.0 --build-arg VCS_REF=$(git rev-parse --short HEAD)
         docker push ghcr.io/vikas-aggarwal/vulnerable-app:1.0
